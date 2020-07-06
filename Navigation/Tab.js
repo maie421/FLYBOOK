@@ -29,7 +29,7 @@ export default ({navigation,route})=>{
           } else if (route.name === "발견") {
             iconName += "search";
           } else if (route.name === "내정보") {
-            iconName += "heart";
+            iconName += "person";
           }
           return (
             <Ionicons

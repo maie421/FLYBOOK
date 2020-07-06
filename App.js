@@ -16,7 +16,6 @@ const cacheImages = images =>
     }
   });
 
-const cacheFonts = fonts=> fonts.map(font => [Font.loadAsync(font)]);
 
 export default function App() {
   const [isReady,setIsReady]=useState(false);
@@ -26,8 +25,7 @@ export default function App() {
       require("./assets/splash.png")
     ]);
     
-    const fonts = () => cacheFonts([Ionicons.font]);
-    return Promise.all([...images,...fonts]);
+    return Promise.all([...images]);
   };
 
   const onFinish =()=>setIsReady(true);
