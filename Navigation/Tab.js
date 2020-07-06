@@ -34,12 +34,15 @@ export default ({navigation,route})=>{
           return (
             <Ionicons
               name={iconName}
-              color={focused ? "#086ad7" : "black"}
+              color={focused ? "black" : "#8C8C8C"}
               size={26}
             />
           );
         }
       })}
+      tabBarOptions={{
+        activeTintColor:"black",
+      }}
     >
       <Tab.Screen name="FLYBOOK" component={Home} />
       <Tab.Screen name="글쓰기" component={Writing} />
