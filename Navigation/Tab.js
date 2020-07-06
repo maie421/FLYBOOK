@@ -1,5 +1,7 @@
 import React , {useLayoutEffect} from "react";
+import { Platform } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
 import Home from "../Screen/Home";
 import Writing from "../Screen/Writing";
 import Discovery from "../Screen/Discovery";
@@ -12,10 +14,33 @@ const getHeaderTitle = route =>
 
 export default ({navigation,route})=>{
     useLayoutEffect(() => {
-        navigation.setOptions({ headerTitle: getHeaderTitle(route) });
-      }, [ route]);
+      const name=getHeaderTitle(route);
+        navigation.setOptions({ title:name });
+      }, [route]);
     return (
-    <Tab.Navigator>
+      <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused }) => {
+          let iconName = Platform.OS === "ios" ? "ios-" : "md-";
+          if (route.name === "FLYBOOK") {
+            iconName += "home";
+          } else if (route.name === "글쓰기") {
+            iconName += "create";
+          } else if (route.name === "발견") {
+            iconName += "search";
+          } else if (route.name === "내정보") {
+            iconName += "heart";
+          }
+          return (
+            <Ionicons
+              name={iconName}
+              color={focused ? "#086ad7" : "black"}
+              size={26}
+            />
+          );
+        }
+      })}
+    >
       <Tab.Screen name="FLYBOOK" component={Home} />
       <Tab.Screen name="글쓰기" component={Writing} />
       <Tab.Screen name="발견" component={Discovery} />
