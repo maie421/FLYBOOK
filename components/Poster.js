@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Ionicons ,MaterialCommunityIcons} from '@expo/vector-icons';
 import { CardItem, Thumbnail, Body, Left, Right, Button, Icon,Card } from 'native-base';
 import Book from "../components/Book";
+
 const SideText=styled.Text`
   color: #8C8C8C;
   margin-right:10px;
@@ -19,13 +20,12 @@ iconName+='star';
 
 const Poster= () =>{
     const navigation = useNavigation();
-    const goToDetai = () => {
-      navigation.navigate("Detail");
+    const goToDetail = () => {
+      navigation.navigate("책정보");
     };
 return (
-
  <Card>
-    <CardItem  showsHorizontalScrollIndicator={false}>
+    <CardItem>
         <Left>
             <Thumbnail source={{uri:'https://image.yes24.com/momo/TopCate0001/kepub/X_697651.jpg'}} />
             <Body>
@@ -37,7 +37,7 @@ return (
             </Body>
         </Left>
     </CardItem>
-    <TouchableOpacity onPress={goToDetai}>
+    <TouchableOpacity onPress={goToDetail}>
     <Book/>
     </TouchableOpacity>
     <CardItem>

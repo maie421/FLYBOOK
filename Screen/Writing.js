@@ -1,7 +1,8 @@
 import React,{useState} from "react";
-import {View,Text  } from "react-native";
+import {View,Text ,TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons'; 
 import styled from 'styled-components/native';
+import { useNavigation } from "@react-navigation/native";
 import { Container,Left,Content,List,ListItem,Right,Thumbnail,Body,Button} from 'native-base';
 
 const TextInput = styled.TextInput`
@@ -17,6 +18,10 @@ const Foud=styled.View`
 
 export default () =>{
     const [value, onChangeText] = useState('');
+    const navigation = useNavigation();
+    const goToDetail = () => {
+      navigation.navigate("WritingPage");
+    };
     return(
     <Container>
     <Foud>
@@ -28,19 +33,22 @@ export default () =>{
     />
     </Foud>
     <Content>
-          <List>
-            <ListItem thumbnail>
-              <Body>
-                <Text style={{fontWeight: 'bold'}}>내 이름을 잊어줘</Text>
-                <Text>j.s 온로 지음</Text>
-                <Text>북플라자 퍼냄</Text>
-              </Body>
-              <Right>
+      <List>
+        <ListItem thumbnail>
+          <Body>
+            <Text style={{fontWeight: 'bold'}}>내 이름을 잊어줘</Text>
+            <Text>j.s 온로 지음</Text>
+             <Text>북플라자 퍼냄</Text>
+           </Body>
+           <Right>
+              
+              <TouchableOpacity onPress={goToDetail} style={{backgroundColor: 'red'}}>
                 <Thumbnail square source={{ uri: 'https://image.yes24.com/momo/TopCate0001/kepub/X_697651.jpg' }} style={{ height:70,width:50,margin:-3}}/>
-              </Right>
-            </ListItem>
-          </List>
-        </Content>
+              </TouchableOpacity>
+            </Right>
+         </ListItem>
+      </List>
+    </Content>
     </Container>
     );
 };

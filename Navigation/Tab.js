@@ -45,7 +45,7 @@ export default ({navigation,route})=>{
       }}
     >
       <Tab.Screen name="FLYBOOK" component={Home} />
-      <Tab.Screen name="글쓰기" component={Writing} />
+      <Tab.Screen name="글쓰기" component={Writing}   />
       <Tab.Screen name="발견" component={Discovery} />
       <Tab.Screen name="내정보" component={Myinfo} />
     </Tab.Navigator>

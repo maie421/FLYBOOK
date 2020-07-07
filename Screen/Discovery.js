@@ -28,19 +28,19 @@ export default () =>{
     />
     </Foud>
     <Content>
-          <List>
-            <ListItem thumbnail>
-              <Body>
-                <Text style={{fontWeight: 'bold'}}>내 이름을 잊어줘</Text>
-                <Text>j.s 온로 지음</Text>
-                <Text>북플라자 퍼냄</Text>
-              </Body>
-              <Right>
-                <Thumbnail square source={{ uri: 'https://image.yes24.com/momo/TopCate0001/kepub/X_697651.jpg' }} style={{ height:70,width:50,margin:-3}}/>
-              </Right>
-            </ListItem>
-          </List>
-        </Content>
+      <List>
+         <ListItem thumbnail>
+           <Body>
+            <Text style={{fontWeight: 'bold'}}>내 이름을 잊어줘</Text>
+            <Text>j.s 온로 지음</Text>
+            <Text>북플라자 퍼냄</Text>
+           </Body>
+          <Right>
+             <Thumbnail square source={{ uri: 'https://image.yes24.com/momo/TopCate0001/kepub/X_697651.jpg' }} style={{ height:70,width:50,margin:-3}}/>
+           </Right>
+         </ListItem>
+      </List>
+    </Content>
     </Container>
     );
 };
