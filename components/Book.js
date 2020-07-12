@@ -17,23 +17,31 @@ const Star=styled.View`
 let iconName = Platform.OS === "ios" ? "ios-" : "md-";
 iconName+='star';
 
-const Book= () =>{
+const Book= (book) =>{
+let starcolor=[]
+console.log(book);
 
+for(let i=0;i<book.score;i++){
+  starcolor[i]="#013064";
+}
+for(let i=0;i<5-book.score;i++){
+  starcolor[4-i]="#EAEAEA";
+}
 return (
 <CardItem>
     <Left style={{flex: 0.8}}>
-    <Image source={{uri:'https://image.yes24.com/momo/TopCate0001/kepub/X_697651.jpg'}} style={{height:200, width:150}}/>
+    <Image source={{uri:book.path}} style={{height:220, width:170}}/>
     </Left>
-    <Body style={{flex: 1}}>
-        <Text style={{marginBottom:20}}>우아한 가난의 시대(김지선 에세이)</Text>
-        <SideText>이완규 지음</SideText>
-        <SideText>원앤원북스 퍼냄</SideText>
-        <Star>
-        <Ionicons name={iconName} size={26} color="#013064" />
-        <Ionicons name={iconName} size={26} color="#013064" />
-        <Ionicons name={iconName} size={26} color="#013064" />
-        <Ionicons name={iconName} size={26} color="#013064" />
-        <Ionicons name={iconName} size={26} color="#013064" />
+    <Body style={{flex: 1,marginTop:-40,marginLeft:50}}>
+        <Text style={{marginBottom:20}}>{book.title}</Text>
+        <SideText>{book.authors}</SideText>
+        <SideText>{book.publisher}</SideText>
+        <Star> 
+        <Ionicons name={iconName} size={26} color={starcolor[0]} />
+        <Ionicons name={iconName} size={26} color={starcolor[1]} />
+        <Ionicons name={iconName} size={26} color={starcolor[2]} />
+        <Ionicons name={iconName} size={26} color={starcolor[3]} />
+        <Ionicons name={iconName} size={26} color={starcolor[4]} />
         </Star>
     </Body>
 </CardItem>

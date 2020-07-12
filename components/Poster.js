@@ -55,7 +55,7 @@ return (
             <Button transparent>
                 <MaterialCommunityIcons name="chat-outline" size={28} color="#8C8C8C" />
             </Button>
-            <SideText>댓글 0</SideText>
+                <SideText>댓글 {book.ratings.length}</SideText>
             <Button transparent>
                 <Ionicons name="md-share" size={28} color="#8C8C8C" />
             </Button>
