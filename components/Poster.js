@@ -18,19 +18,20 @@ const Star=styled.View`
 let iconName = Platform.OS === "ios" ? "ios-" : "md-";
 iconName+='star';
 
-const Poster= () =>{
+const Poster= ({book}) =>{
     const navigation = useNavigation();
     const goToDetail = () => {
       navigation.navigate("책정보");
     };
+    // console.log({...book});
 return (
  <Card>
     <CardItem>
         <Left>
             <Thumbnail source={{uri:'https://image.yes24.com/momo/TopCate0001/kepub/X_697651.jpg'}} />
             <Body>
-                <Text>Beomwoo</Text>
-                <Text note>2018년 5월 22일</Text>
+                <Text>{book.user.name}</Text>
+                <Text note>{book.created_at}</Text>
             </Body>
             <Body style={{marginTop:-45,flex:0.12}}>
                 <MaterialCommunityIcons name="settings-helper" size={40} color="black" />
@@ -38,12 +39,12 @@ return (
         </Left>
     </CardItem>
     <TouchableOpacity onPress={goToDetail}>
-    <Book/>
+    <Book {...book}/>
     </TouchableOpacity>
     <CardItem>
         <Text>
-            <Text style={{fontWeight:'900'}}>Beomwoo </Text>
-            #인스타그램 #따라하기 #리액트네이티브</Text>
+            <Text style={{fontWeight:'900'}}></Text>
+            {book.body}</Text>
     </CardItem>
     <CardItem style={{height:45}}>
         <Left>
