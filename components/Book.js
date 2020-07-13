@@ -19,7 +19,6 @@ iconName+='star';
 
 const Book= (book) =>{
 let starcolor=[]
-console.log(book);
 
 for(let i=0;i<book.score;i++){
   starcolor[i]="#013064";

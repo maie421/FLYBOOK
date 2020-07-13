@@ -11,8 +11,7 @@ export default () => {
   });
   const getData = async () => {
     // const [nowbook, nowbookError] = await getRequest("books");
-    axios.get(`${mainpath}books`, {
-
+    await axios.get(`${mainpath}books`, {
       }).then(response=> {
         setbooks({
             loading: false,

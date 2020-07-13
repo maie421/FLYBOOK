@@ -21,7 +21,9 @@ iconName+='star';
 const Poster= ({book}) =>{
     const navigation = useNavigation();
     const goToDetail = () => {
-      navigation.navigate("책정보");
+      navigation.navigate("책정보",{
+        book
+      });
     };
     // console.log({...book});
 return (

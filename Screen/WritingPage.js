@@ -8,7 +8,8 @@ const TextInput = styled.TextInput`
   margin: 5px 15px;
   font-size:15px;
 `;
-export default ({ navigation }) =>{
+export default ({route}) =>{
+  // console.log(route);
 const [value, onChangeText] = useState('');
   return(
   <Container>

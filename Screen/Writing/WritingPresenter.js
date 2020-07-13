@@ -16,37 +16,43 @@ const Foud=styled.View`
   margin-top:20px;
 `;
 
-export default () =>{
+export default ({ books,keyword, onChange, onSubmit}) =>{
     const [value, onChangeText] = useState('');
     const navigation = useNavigation();
-    const goToDetail = () => {
-      navigation.navigate("WritingPage");
+    const goToDetail = book => {
+      // navigation.navigate("WritingPage",{book});
+      console.log("클릭");
     };
     return(
     <Container>
     <Foud>
     <Ionicons name="md-search" size={35} color="black" style={{marginRight:10}}/>
     <TextInput
-     placeholder={"Write a keyword"}
-      onChangeText={text => onChangeText(text)}
-      value={value}
+      placeholder={"Write a keyword"}
+      value={keyword}
+      onChangeText={onChange}
+      onSubmitEditing={onSubmit}
+      returnKeyType={"search"}
     />
     </Foud>
     <Content>
       <List>
+      {books.map(book=>(
         <ListItem thumbnail>
-          <Body>
-            <Text style={{fontWeight: 'bold'}}>내 이름을 잊어줘</Text>
-            <Text>j.s 온로 지음</Text>
-             <Text>북플라자 퍼냄</Text>
+           <Body>
+        <Text style={{fontWeight: 'bold'}}>{book.title}</Text>
+            <Text>{book.authors}</Text>
+            <Text>{book.publisher}</Text>
            </Body>
-           <Right>
-              
-              <TouchableOpacity onPress={goToDetail} style={{backgroundColor: 'red'}}>
-                <Thumbnail square source={{ uri: 'https://image.yes24.com/momo/TopCate0001/kepub/X_697651.jpg' }} style={{ height:70,width:50,margin:-3}}/>
-              </TouchableOpacity>
-            </Right>
+          <Right>
+            
+            {/* <TouchableOpacity> */}
+            <TouchableOpacity onPress={goToDetail(book)}>
+                <Thumbnail square source={{ uri: book.thumbnail }} style={{ height:70,width:50,margin:-3}}/>
+            </TouchableOpacity>
+           </Right>
          </ListItem>
+         ))}
       </List>
     </Content>
     </Container>
