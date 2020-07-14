@@ -20,8 +20,7 @@ export default ({ books,keyword, onChange, onSubmit}) =>{
     const [value, onChangeText] = useState('');
     const navigation = useNavigation();
     const goToDetail = book => {
-      // navigation.navigate("WritingPage",{book});
-      console.log("클릭");
+      navigation.navigate("WritingPage",{book});
     };
     return(
     <Container>
@@ -47,7 +46,7 @@ export default ({ books,keyword, onChange, onSubmit}) =>{
           <Right>
             
             {/* <TouchableOpacity> */}
-            <TouchableOpacity onPress={goToDetail(book)}>
+            <TouchableOpacity  underlayColor='rgba(73,182,77,1,0.9)' onPress={() =>goToDetail(book)}>
                 <Thumbnail square source={{ uri: book.thumbnail }} style={{ height:70,width:50,margin:-3}}/>
             </TouchableOpacity>
            </Right>

@@ -18,7 +18,7 @@ let iconName = Platform.OS === "ios" ? "ios-" : "md-";
 iconName+='star';
 
 const Book= (book) =>{
-let starcolor=[]
+let starcolor=["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"];
 
 for(let i=0;i<book.score;i++){
   starcolor[i]="#013064";
@@ -29,13 +29,13 @@ for(let i=0;i<5-book.score;i++){
 return (
 <CardItem>
     <Left style={{flex: 0.8}}>
-    <Image source={{uri:book.path}} style={{height:220, width:170}}/>
+    <Image source={{uri:book.thumbnail}} style={{height:220, width:170}}/>
     </Left>
-    <Body style={{flex: 1,marginTop:-40,marginLeft:50}}>
+    <Body style={{flex: 1,marginLeft:50}}>
         <Text style={{marginBottom:20}}>{book.title}</Text>
         <SideText>{book.authors}</SideText>
         <SideText>{book.publisher}</SideText>
-        <Star> 
+        <Star>
         <Ionicons name={iconName} size={26} color={starcolor[0]} />
         <Ionicons name={iconName} size={26} color={starcolor[1]} />
         <Ionicons name={iconName} size={26} color={starcolor[2]} />
