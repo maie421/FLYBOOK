@@ -20,7 +20,7 @@ iconName+='star';
 
 const Poster= ({book}) =>{
     const navigation = useNavigation();
-    const goToDetail = () => {
+    const goToDetail = (book) => {
       navigation.navigate("책정보",{
         book
       });
@@ -40,7 +40,7 @@ return (
             </Body>
         </Left>
     </CardItem>
-    <TouchableOpacity onPress={goToDetail}>
+    <TouchableOpacity onPress={()=>goToDetail(book)}>
     <Book {...book}/>
     </TouchableOpacity>
     <CardItem>

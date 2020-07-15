@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const mainpath =' https://ca1d1e6323cf.ngrok.io/api/';
+export const mainpath ='https://4eaec0406c55.ngrok.io/api/';
 const getRequest = (path, params) =>{
   axios.get(`${mainpath}${path}`, {
     params: {
