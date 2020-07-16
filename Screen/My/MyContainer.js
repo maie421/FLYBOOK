@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { mainpath} from "../../api";
-import HomePresenter from "./HomePresenter";
+import MyPresenter from "./MyPresenter";
 import axios from "axios";
 
 export default () => {
@@ -11,12 +11,12 @@ export default () => {
   });
   const getData = async () => {
     // const [nowbook, nowbookError] = await getRequest("books");
-    await axios.get(`${mainpath}books`, {
-      }).then(response=> {
+    await axios.get(`${mainpath}user?user_id=1`)
+    .then(response=> {
         setbooks({
-          loading: false,
+            loading: false,
             nowbook:response.data.data,
-          });
+        });
       });
     //   console.log({...books.nowbook});
   };
@@ -25,5 +25,5 @@ export default () => {
     getData();
   }, []);
 
-  return <HomePresenter refreshFn={getData} {...books} />;
+  return <MyPresenter {...books} />;
 };

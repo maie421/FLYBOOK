@@ -13,6 +13,10 @@ const TextInput = styled.TextInput`
 export default ({route:{params:{book}}}) =>{
   const navigation = useNavigation();
   const search = async () => {
+    if (value === "") {
+      alert("빈칸을 채워주세요");
+      return;
+    }
     await axios.post(`${mainpath}books`, {
         score:3,
         body:value,
@@ -29,10 +33,9 @@ export default ({route:{params:{book}}}) =>{
     }).catch(function (error) {
       console.log("ERRRR:: ",error.response.data);
     });
-    if (value === "") {
-      return;
-    }
+
     navigation.goBack();
+    value="";
   };
   
 const [value, onChangeText] = useState('');

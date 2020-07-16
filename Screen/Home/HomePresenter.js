@@ -11,7 +11,7 @@ export default ({ nowbook,loading}) =>{
   return(
   <Container>
     <Content disableKBDismissScroll>
-        {nowbook.map(book => (
+        {nowbook?.map(book => (
           <Poster
             key={book.id}
             id={book.id}
