@@ -1,16 +1,28 @@
 import React from "react";
 import styled from 'styled-components/native';
-import { Platform } from "react-native";
+import {
+  ScrollView,
+  RefreshControl,
+  StyleSheet,
+  Text,
+  SafeAreaView,
+} from 'react-native';
 import { Container,Content,Card} from 'native-base';
 import Poster from "../../components/Poster";
+import ScrollContainer from "../../components/ScrollContainer";
+import Constants from 'expo-constants';
 
-export default ({ nowbook,loading}) =>{
-  // let iconName = Platform.OS === "ios" ? "ios-" : "md-";
-  // iconName+='star';
-  // console.log({...nowbook});
+const wait = (timeout) => {
+  return new Promise(resolve => {
+    setTimeout(resolve, timeout);
+  });
+}
+
+export default ({ refreshFn,nowbook,loading}) =>{
   return(
-  <Container>
-    <Content disableKBDismissScroll>
+    <Container>
+      <ScrollContainer refreshFn={refreshFn} loading={loading}>
+    <Content>
         {nowbook?.map(book => (
           <Poster
             key={book.id}
@@ -20,7 +32,8 @@ export default ({ nowbook,loading}) =>{
             // user={book.user}
           />
         ))}
-    </Content>
+        </Content>
+    </ScrollContainer>
   </Container>
   );
-};
+}
