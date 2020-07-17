@@ -10,10 +10,6 @@ const SideText=styled.Text`
   color: #8C8C8C;
   margin-right:10px;
 `;
-const Star=styled.View`
-  margin-top:10px;
-  flexDirection: row;
-`;
 
 let iconName = Platform.OS === "ios" ? "ios-" : "md-";
 iconName+='star';
@@ -21,11 +17,11 @@ iconName+='star';
 const Poster= ({book}) =>{
     const navigation = useNavigation();
     const goToDetail = (book) => {
-      navigation.navigate("책정보",{
-        book
-      });
+        navigation.navigate("책정보",{book});
     };
-    // console.log({...book});
+    const goToRating=(book)=>{
+        navigation.navigate("댓글",{book});
+    };
 return (
  <Card>
     <CardItem>
@@ -54,9 +50,9 @@ return (
                 <Ionicons name="md-heart-empty" size={28} color="red" />
             </Button>
             <SideText>좋아요 0</SideText>
-            <Button transparent>
+            <TouchableOpacity  underlayColor='rgba(73,182,77,1,0.9)' onPress={() =>goToRating(book)}>
                 <MaterialCommunityIcons name="chat-outline" size={28} color="#8C8C8C" />
-            </Button>
+            </TouchableOpacity>
                 <SideText>댓글 {book.ratings.length}</SideText>
             <Button transparent>
                 <Ionicons name="md-share" size={28} color="#8C8C8C" />
