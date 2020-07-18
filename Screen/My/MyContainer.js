@@ -25,5 +25,5 @@ export default () => {
     getData();
   }, []);
 
-  return <MyPresenter {...books} />;
+  return <MyPresenter refreshFn={getData} {...books} />;
 };

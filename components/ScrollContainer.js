@@ -24,7 +24,8 @@ const ScrollContainer = ({
   const onRefresh = React.useCallback(async() => {
     setRefreshing(true);
     await refreshFn();
-    wait(1000).then(() => setRefreshing(false));
+    // wait(1000).then(() => setRefreshing(false));
+    setRefreshing(false);
   }, []);
   return (
     <ScrollView
@@ -42,30 +43,10 @@ const ScrollContainer = ({
         ...contentContainerStyle
       }}
     >
-      {loading ? <ActivityIndicator color="white" size="small" /> : children}
+      {loading ? <ActivityIndicator color="black" size="small" /> : children}
     </ScrollView>
-        //   <ScrollView
-        //   contentContainerStyle={styles.scrollView}
-        //   refreshControl={
-        //     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        //   }
-        // >
-        //   <Text>Pull down to see RefreshControl indicator</Text>
-        // </ScrollView>
   );
 };
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     marginTop: Constants.statusBarHeight,
-//   },
-//   scrollView: {
-//     flex: 1,
-//     backgroundColor: 'pink',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
 ScrollContainer.propTypes = {
   loading: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
