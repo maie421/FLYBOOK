@@ -10,7 +10,6 @@ export default () => {
     nowbook: [],
   });
   const getData = async () => {
-    // const [nowbook, nowbookError] = await getRequest("books");
     await axios.get(`${mainpath}books`, {
       }).then(response=> {
         setbooks({

@@ -42,6 +42,7 @@ const search = async () => {
 
 const handleRating = (rating) => {
   setrating(rating);
+
 };
 
 const [value, onChangeText] = useState('');
