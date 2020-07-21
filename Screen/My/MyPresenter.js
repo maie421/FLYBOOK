@@ -17,7 +17,8 @@ export default ({ refreshFn, loading,nowbook}) =>{
     <ScrollContainer refreshFn={refreshFn} loading={loading}>
       <Content>
         <Body style={{marginTop:30}}>
-        <Thumbnail large source={{uri: 'https://image.yes24.com/momo/TopCate0001/kepub/X_697651.jpg'}} style={{marginBottom:5}}/>
+        {/* <Thumbnail large source={{uri: 'https://image.yes24.com/momo/TopCate0001/kepub/X_697651.jpg'}} style={{marginBottom:5}}/> */}
+        <Ionicons name="md-person" size={50} color="black" />
         <Text>{nowbook?.name}</Text>
         <SideText>안녕하세요. {nowbook?.name}입니다.</SideText>
         </Body>

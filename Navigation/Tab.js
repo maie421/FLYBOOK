@@ -2,10 +2,12 @@ import React , {useLayoutEffect} from "react";
 import { Platform } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import { View, Text, Button, Image } from 'react-native';
 import Home from "../Screen/Home";
 import Writing from "../Screen/Writing";
 import Discovery from "../Screen/Discovery";
 import Myinfo from "../Screen/My";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,8 +17,21 @@ const getHeaderTitle = route =>
 export default ({navigation,route})=>{
     useLayoutEffect(() => {
       const name=getHeaderTitle(route);
-        navigation.setOptions({ title:name });
+        navigation.setOptions({ 
+          title:name,
+          headerRight: () => (
+            <MaterialCommunityIcons 
+            style={{marginRight:10}}
+            onPress={() => navigation.navigate('바코드')}
+            name="barcode-scan" 
+            size={30} 
+            color="black"
+            />
+          ),
+         });
+
       }, [route]);
+
     return (
       <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -46,7 +61,7 @@ export default ({navigation,route})=>{
     >
       <Tab.Screen name="FLYBOOK" component={Home} />
       <Tab.Screen name="글쓰기" component={Writing}   />
-      <Tab.Screen name="발견" component={Discovery} />
+      <Tab.Screen name="발견" component={Discovery}/>
       <Tab.Screen name="내정보" component={Myinfo} />
     </Tab.Navigator>
     );

@@ -56,7 +56,7 @@ return (
  <Card>
     <CardItem>
         <Left>
-            <Thumbnail source={{uri:'https://image.yes24.com/momo/TopCate0001/kepub/X_697651.jpg'}} />
+        <Ionicons name="md-person" size={50} color="black" />
             <Body>
                 <Text>{book.user.name}</Text>
                 <Text note>{book.created_at}</Text>
@@ -84,10 +84,6 @@ return (
                 <MaterialCommunityIcons name="chat-outline" size={28} color="#8C8C8C" />
             </TouchableOpacity>
                 <SideText>댓글 {book.ratings.length}</SideText>
-            <Button transparent>
-                <Ionicons name="md-share" size={28} color="#8C8C8C" />
-            </Button>
-            <SideText>공유</SideText>
         </Left>
     </CardItem>
 </Card>

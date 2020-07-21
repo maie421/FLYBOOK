@@ -16,6 +16,7 @@ const Foud=styled.View`
   margin-top:20px;
 `;
 export default ({ books,keyword, onChange, onSubmit}) =>{
+  
   const navigation = useNavigation();
   const goToDetail = book => {
     navigation.navigate("책정보",{book});
