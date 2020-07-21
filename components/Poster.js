@@ -3,8 +3,9 @@ import {View ,Text,  Image,TouchableOpacity} from "react-native";
 import styled from 'styled-components/native';
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons ,MaterialCommunityIcons} from '@expo/vector-icons';
-import { CardItem, Thumbnail, Body, Left, Right, Button, Icon,Card } from 'native-base';
-import Book from "../components/Book";
+import { CardItem, Thumbnail, Body, Left, Right, Button, Icon,Card,} from 'native-base';
+import Book from "./Book";
+import Action from "./ActionSheet";
 import {mainpath} from "../api";
 import axios from "axios";
 
@@ -13,18 +14,17 @@ const SideText=styled.Text`
   margin-right:10px;
 `;
 
-let iconName = Platform.OS === "ios" ? "ios-" : "md-";
-iconName+='star';
+// let iconName = Platform.OS === "ios" ? "ios-" : "md-";
+// iconName+='star';
+
 
 const Poster= ({book}) =>{
+
 const result = book.Likes.filter(like=> like.user_id==1);
 const [like,setlike]=useState({
     likecount:book.Likes.length,
-    isLiked:result.length<=0?'md-heart-empty':'md-heart'
+    isLiked:result.length<=0?'md-heart-empty':'md-heart',
 });
-// if(result.length<=1){
-//     setlike({isLiked:1});
-// }
 
 const navigation = useNavigation();
 const goToDetail = (book) => {
@@ -34,7 +34,6 @@ const goToRating=(book)=>{
     navigation.navigate("댓글",{book});
 };
 const Likes=async (id,likes)=>{
-
     if(like.isLiked=='md-heart-empty'){
         // setlike(book.Likes.length+1);
         setlike({
@@ -63,10 +62,8 @@ return (
                 <Text note>{book.created_at}</Text>
             </Body>
             {book.user.id==1?(
-            <Body style={{marginTop:-45,flex:0.12}}>
-                <MaterialCommunityIcons name="settings-helper" size={40} color="black" />
-            </Body>
-            ):<Text></Text>}
+                <Action {...book}/>
+           ):<Text></Text>}
         </Left>
     </CardItem>
     <TouchableOpacity onPress={()=>goToDetail(book)}>

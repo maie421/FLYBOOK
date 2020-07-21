@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const mainpath ='https://e14f771a36e9.ngrok.io/api/';
+export const mainpath ='https://review421.herokuapp.com/api/';
 const getRequest = (path, params) =>{
   axios.get(`${mainpath}${path}`, {
     params: {

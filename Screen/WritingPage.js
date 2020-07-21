@@ -14,6 +14,25 @@ const TextInput = styled.TextInput`
 export default ({route:{params:{book}}}) =>{
 
   const navigation = useNavigation();
+const update = async()=>{
+  if (value === "") {
+    alert("빈칸을 채워주세요");
+    return;
+  }
+  await axios.patch(`${mainpath}books/${book.id}`, {
+      score:rating,
+      body:value,
+      user_id:1,
+
+  }).then(function (response) {
+    console.log(response);
+  }).catch(function (error) {
+    console.log("ERRRR:: ",error.response.data);
+  });
+
+  navigation.goBack();
+  value="";
+};
 const search = async () => {
   if (value === "") {
     alert("빈칸을 채워주세요");
@@ -45,8 +64,8 @@ const handleRating = (rating) => {
 
 };
 
-const [value, onChangeText] = useState('');
-const [rating,setrating] = useState(0);
+const [value, onChangeText] = useState(book?.body);
+const [rating,setrating] = useState(book?.score);
 
   return(
   <Container>
@@ -65,7 +84,7 @@ const [rating,setrating] = useState(0);
      placeholder={"이 책은 어떠셨나요? 채의 감상을 공유하세요."}
       onChangeText={text => onChangeText(text)}
       value={value}
-      onSubmitEditing={search}
+      onSubmitEditing={book?.body?update:search}
       returnKeyType={"search"}
       />
   </Container>

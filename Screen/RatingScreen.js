@@ -30,7 +30,6 @@ export default ({ route:{params:{book:{ratings},book}} }) =>{
         rating:value,
         book_id:book.id,
         user_id:1,
-
     }).then(function (response) {
       console.log(response);
     }).catch(function (error) {
