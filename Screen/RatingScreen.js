@@ -49,7 +49,7 @@ const [value, onChangeText] = useState('');
     <>
     <CardItem >
     <Left>
-        <Thumbnail source={{uri: 'https://image.yes24.com/momo/TopCate0001/kepub/X_697651.jpg'}} />
+        <Ionicons name="md-search" size={35} color="black" style={{marginRight:10}}/>
         <Body>
         <Text>{rating.user.name}</Text>
         <Text note>{rating.created_at}</Text>

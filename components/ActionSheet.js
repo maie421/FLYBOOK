@@ -6,9 +6,6 @@ import {mainpath} from "../api";
 import axios from "axios";
 
 var BUTTONS = ["수정", "삭제"];
-var DESTRUCTIVE_INDEX = 3;
-var CANCEL_INDEX = 4;
-
 const Action=(book)=>{
     const navigation = useNavigation();
 
@@ -32,7 +29,7 @@ const Action=(book)=>{
     <Root>
         <Button  
             transparent
-            style={{backgroundColor:'white',width:40,marginLeft:100,marginTop:-35}}
+            style={{backgroundColor:'white',width:40,marginLeft:100,marginTop:-25}}
             onPress={() =>
             ActionSheet.show(
               {

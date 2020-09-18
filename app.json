@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "brand",
-    "slug": "brand",
+    "name": "Book",
+    "slug": "book",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,10 +17,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "co.review421.herokuapp",
+      "buildNumber": "1.0.0"
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "android": {
+      "package": "co.review421.herokuapp",
+      "versionCode": 1
     }
   }
 }
