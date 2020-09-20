@@ -2,6 +2,7 @@ import React from "react";
 import { Container,Content,Card} from 'native-base';
 import Poster from "../../components/Poster";
 import ScrollContainer from "../../components/ScrollContainer";
+import Constants from 'expo-constants';
 
 export default ({ refreshFn,nowbook,loading}) =>{
   return(
@@ -13,6 +14,8 @@ export default ({ refreshFn,nowbook,loading}) =>{
               key={book.id}
               id={book.id}
               book={book}
+              // isbn={book.isbn}
+              // user={book.user}
             />
           ))}
         </Content>
