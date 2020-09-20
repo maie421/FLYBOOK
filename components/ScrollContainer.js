@@ -3,12 +3,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { ScrollView, ActivityIndicator, RefreshControl } from "react-native";
 
-const wait = (timeout) => {
-  return new Promise(resolve => {
-    setTimeout(resolve, timeout);
-  });
-}
-
 const ScrollContainer = ({
   loading,
   children,
@@ -24,7 +18,6 @@ const ScrollContainer = ({
   const onRefresh = React.useCallback(async() => {
     setRefreshing(true);
     await refreshFn();
-    // wait(1000).then(() => setRefreshing(false));
     setRefreshing(false);
   }, []);
   return (
