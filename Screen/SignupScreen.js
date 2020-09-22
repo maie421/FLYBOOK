@@ -37,7 +37,7 @@ export default function SignupScreen({ navigation }) {
         labelStyle={styles.loginButtonLabel}
         onPress={() => register(email, password)}
       />
-      <FormButton
+<FormButton
         title='back'
         style={styles.navButton}
         color='#6646ee'

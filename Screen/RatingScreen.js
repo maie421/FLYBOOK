@@ -19,6 +19,7 @@ const TextInput = styled.TextInput`
   border: 1px solid #BDBDBD;
 `;
 export default ({ route:{params:{book:{ratings},book}} }) =>{
+    console.log(book.id);
   const navigation = useNavigation();
   const search = async () => {
     if (value === "") {
@@ -48,7 +49,7 @@ const [value, onChangeText] = useState('');
     <>
     <CardItem >
     <Left>
-        <Thumbnail source={{uri: 'https://toppng.com/uploads/preview/user-font-awesome-nuevo-usuario-icono-11563566658mjtfvilgcs.png'}} />
+        <Thumbnail source={{uri: 'https://e7.pngegg.com/pngimages/425/800/png-clipart-computer-icons-encapsulated-postscript-others-vector-icons-silhouette.png'}} />
         <Body>
         <Text>{rating.user.name}</Text>
         <Text note>{rating.created_at}</Text>
@@ -68,7 +69,7 @@ const [value, onChangeText] = useState('');
     </Content>
     <Footer style={{backgroundColor:'white'}}>
         <TextInput
-        placeholder={"이 책은 어떠셨나요? 책의 감상을 공유하세요."}
+        placeholder={"이 책은 어떠셨나요? 채의 감상을 공유하세요."}
         onChangeText={text => onChangeText(text)}
         value={value}
         onSubmitEditing={search}

@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\maie4\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add firebase
+  C:\Program Files\nodejs\node.exe C:\Users\maie4\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add expo-barcode-scanner@~8.2.1
 
 PATH: 
-  C:\Program Files\AdoptOpenJDK\jdk-11.0.8.10-hotspot\bin;C:\ProgramData\Anaconda3;C:\ProgramData\Anaconda3\Library\mingw-w64\bin;C:\ProgramData\Anaconda3\Library\usr\bin;C:\ProgramData\Anaconda3\Library\bin;C:\ProgramData\Anaconda3\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\nodejs\;C:\xampp\php;C:\composer;C:\platform-tools\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-14.0.2\bin;C:\Users\maie4\AppData\Local\Microsoft\WindowsApps;C:\Users\maie4\AppData\Local\GitHubDesktop\bin;C:\Users\maie4\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\maie4\AppData\Roaming\npm;C:\Users\maie4\AppData\Roaming\Composer\vendor\bin;C:\Program Files\heroku\bin;C:\Program Files\Docker Toolbox;C:\Users\maie4\AppData\Local\JetBrains\IntelliJ IDEA Educational Edition 2020.2.1\bin;;C:\Program Files\MongoDB\Server\4.4\bin;
+  C:\ProgramData\Anaconda3;C:\ProgramData\Anaconda3\Library\mingw-w64\bin;C:\ProgramData\Anaconda3\Library\usr\bin;C:\ProgramData\Anaconda3\Library\bin;C:\ProgramData\Anaconda3\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\nodejs\;C:\xampp\php;C:\composer;C:\platform-tools\;C:\Program Files\Git\cmd;C:\Users\maie4\AppData\Local\Microsoft\WindowsApps;C:\Users\maie4\AppData\Local\GitHubDesktop\bin;C:\Users\maie4\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\maie4\AppData\Roaming\npm;C:\Users\maie4\AppData\Roaming\Composer\vendor\bin;C:\Program Files\heroku\bin;C:\Program Files\Docker Toolbox
 
 Yarn version: 
   1.22.4
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\maie4\OneDrive\바탕 화면\github\FLYBOOK\node_modules\react-native-keyboard-aware-scroll-view\lib'
+  Error: EPERM: operation not permitted, unlink 'C:\Users\maie4\OneDrive\바탕 화면\github\brand\node_modules\react-native-keyboard-aware-scroll-view\lib'
 
 npm manifest: 
   {
@@ -34,7 +34,6 @@ npm manifest:
       "axios": "^0.19.2",
       "expo": "~38.0.8",
       "expo-asset": "^8.1.7",
-      "expo-barcode-scanner": "^8.2.1",
       "expo-font": "^8.2.1",
       "expo-status-bar": "^1.0.2",
       "native-base": "^2.13.12",
@@ -42,7 +41,6 @@ npm manifest:
       "react-dom": "~16.11.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.1.tar.gz",
       "react-native-gesture-handler": "^1.6.1",
-      "react-native-ionicons": "^4.6.5",
       "react-native-picker-select": "^7.0.0",
       "react-native-reanimated": "^1.9.0",
       "react-native-safe-area-context": "^3.0.7",

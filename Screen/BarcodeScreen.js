@@ -4,7 +4,7 @@ import { Text, Image, View, StyleSheet, Button,TouchableHighlight,FlatList,Activ
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import axios from "axios";
 
-export default ()=> {
+export default function App() {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
   const [results, setResults] = useState("");
