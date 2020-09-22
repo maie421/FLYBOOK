@@ -4,7 +4,6 @@ import HomePresenter from "./HomePresenter";
 import axios from "axios";
 
 export default () => {
-  const [refreshing, setRefresing] = useState(false);
   const [books, setbooks] = useState({
     loading: true,
     nowbook: [],
@@ -13,7 +12,7 @@ export default () => {
     await axios.get(`${mainpath}books`, {
       }).then(response=> {
         setbooks({
-          loading: false,
+            loading: false,
             nowbook:response.data.data,
           });
       });

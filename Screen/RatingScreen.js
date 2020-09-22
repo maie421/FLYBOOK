@@ -19,7 +19,6 @@ const TextInput = styled.TextInput`
   border: 1px solid #BDBDBD;
 `;
 export default ({ route:{params:{book:{ratings},book}} }) =>{
-    console.log(book.id);
   const navigation = useNavigation();
   const search = async () => {
     if (value === "") {

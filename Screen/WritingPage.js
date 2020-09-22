@@ -61,7 +61,6 @@ const search = async () => {
 
 const handleRating = (rating) => {
   setrating(rating);
-
 };
 
 const [value, onChangeText] = useState(book?.body);
@@ -81,7 +80,7 @@ const [rating,setrating] = useState(book?.score);
           emptyColor="#013064"
          style={{flex:0.2,marginLeft:10}}/>
       <TextInput
-     placeholder={"이 책은 어떠셨나요? 채의 감상을 공유하세요."}
+     placeholder={"이 책은 어떠셨나요? 책의 감상을 공유하세요."}
       onChangeText={text => onChangeText(text)}
       value={value}
       onSubmitEditing={book?.body?update:search}

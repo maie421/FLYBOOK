@@ -2,13 +2,19 @@ import React, { useState, useContext } from 'react';
 import { View, StyleSheet,Text,Button } from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
-import { AuthContext } from '../Navigation/AuthStack';
+import { authService } from "../fbase";
 
 export default function SignupScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { register } = useContext(AuthContext);
+  const register = async (email,password) => {
+    try {
+      await authService.createUserWithEmailAndPassword(email, password);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -31,9 +37,8 @@ export default function SignupScreen({ navigation }) {
         labelStyle={styles.loginButtonLabel}
         onPress={() => register(email, password)}
       />
-      <Button
-        icon='keyboard-backspace'
-        size={30}
+      <FormButton
+        title='back'
         style={styles.navButton}
         color='#6646ee'
         onPress={() => navigation.goBack()}

@@ -24,8 +24,7 @@ const cacheImages = images =>
 
 export default function App() {
   const [isReady,setIsReady]=useState(false);
-
-  const [init, setInit] = useState(false);
+  
   const [userObj, setUserObj] = useState(null);
   const [initializing, setInitializing] = useState(true);
 
@@ -52,7 +51,6 @@ export default function App() {
       } else {
         setUserObj(null);
       }
-      setInit(true);
     });
   }, []);
 
