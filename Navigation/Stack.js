@@ -5,6 +5,7 @@ import Tabs from "./Tab";
 import WritingPage from "../Screen/WritingPage";
 import RatingScreen from "../Screen/RatingScreen";
 import BarcodeScreen from "../Screen/BarcodeScreen";
+import AddRoomScreen from "../Screen/AddRoomScreen";
 
 const Stack = createStackNavigator();
 
@@ -15,5 +16,6 @@ export default ()=> (
       <Stack.Screen name="WritingPage" component={WritingPage} options={{headerTitle:"글쓰기"}} />
       <Stack.Screen name="댓글" component={RatingScreen} />
       <Stack.Screen name="바코드" component={BarcodeScreen} />
+      <Stack.Screen name="방추가" component={AddRoomScreen} />
     </Stack.Navigator>
 );

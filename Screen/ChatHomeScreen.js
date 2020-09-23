@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, FlatList, TouchableOpacity ,Button} from 'react-native';
 import { List, Divider } from 'react-native-paper';
 import { dbService } from "../fbase";
 import Loading from '../components/Loading';
@@ -50,6 +50,12 @@ export default ({ navigation }) =>{
 
   return (
     <View style={styles.container}>
+      <Button
+        onPress={() => navigation.navigate('방추가')}
+        title="Learn More"
+        color="#841584"
+        accessibilityLabel="Learn more about this purple button"
+        />
       <FlatList
         data={threads}
         keyExtractor={item => item._id}
