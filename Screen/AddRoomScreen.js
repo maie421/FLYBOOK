@@ -29,7 +29,7 @@ export default ({ navigation }) =>{
             createdAt: new Date().getTime(),
             system: true
           });
-          navigation.navigate('Home');
+          navigation.navigate('채팅');
         });
     }
   }
