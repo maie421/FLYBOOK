@@ -1,14 +1,11 @@
 import React, { useState,useContext ,useEffect} from "react";
 import { AppLoading } from "expo";
-import * as Font from "expo-font";
 import { Asset } from "expo-asset";
-import { Ionicons } from "@expo/vector-icons";
 import { Image,StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import Stack from "./Navigation/Stack";
 
 import AuthStack from './Navigation/AuthStack';
-import { AuthContext } from './Navigation/AuthProvider';
 import { authService } from "./fbase";
 
 

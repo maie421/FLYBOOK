@@ -7,6 +7,7 @@ import Home from "../Screen/Home";
 import Writing from "../Screen/Writing";
 import Discovery from "../Screen/Discovery";
 import Myinfo from "../Screen/My";
+import ChatHome from "../Screen/ChatHomeScreen";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
@@ -41,6 +42,8 @@ export default ({navigation,route})=>{
             iconName += "home";
           } else if (route.name === "글쓰기") {
             iconName += "create";
+          }else if (route.name === "채팅") {
+            iconName += "create";
           } else if (route.name === "발견") {
             iconName += "search";
           } else if (route.name === "내정보") {
@@ -61,6 +64,7 @@ export default ({navigation,route})=>{
     >
       <Tab.Screen name="FLYBOOK" component={Home} />
       <Tab.Screen name="글쓰기" component={Writing}   />
+      <Tab.Screen name="채팅" component={ChatHome}   />
       <Tab.Screen name="발견" component={Discovery}/>
       <Tab.Screen name="내정보" component={Myinfo} />
     </Tab.Navigator>
