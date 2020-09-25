@@ -52,8 +52,8 @@ export default ({ navigation }) =>{
     <View style={styles.container}>
       <Button
         onPress={() => navigation.navigate('방추가')}
-        title="Learn More"
-        color="#841584"
+        title="방추가"
+        color="#6B66FF"
         accessibilityLabel="Learn more about this purple button"
         />
       <FlatList
@@ -81,7 +81,7 @@ export default ({ navigation }) =>{
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f5f5f5',
+    backgroundColor:'#FFFFFF',
     flex: 1
   },
   listTitle: {

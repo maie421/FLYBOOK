@@ -1,14 +1,12 @@
 import React , {useLayoutEffect} from "react";
 import { Platform } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
-import { View, Text, Button, Image } from 'react-native';
+import { Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
 import Home from "../Screen/Home";
 import Writing from "../Screen/Writing";
 import Discovery from "../Screen/Discovery";
 import Myinfo from "../Screen/My";
 import ChatHome from "../Screen/ChatHomeScreen";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -43,7 +41,7 @@ export default ({navigation,route})=>{
           } else if (route.name === "글쓰기") {
             iconName += "create";
           }else if (route.name === "채팅") {
-            iconName += "create";
+            iconName += "chatbubbles";
           } else if (route.name === "발견") {
             iconName += "search";
           } else if (route.name === "내정보") {

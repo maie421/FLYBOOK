@@ -1,8 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { View, StyleSheet,Text,Button } from 'react-native';
+import { View, StyleSheet,Text ,Dimensions} from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 import { authService } from "../fbase";
+import { Button,Content } from 'native-base';
+
+const { width, height } = Dimensions.get('screen');
+
 
 export default function SignupScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -31,25 +35,38 @@ export default function SignupScreen({ navigation }) {
         secureTextEntry={true}
         onChangeText={userPassword => setPassword(userPassword)}
       />
-      <FormButton
+      <Content>
+      {/* <FormButton
         title='Signup'
         modeValue='contained'
         labelStyle={styles.loginButtonLabel}
         onPress={() => register(email, password)}
-      />
-<FormButton
+      /> */}
+      <Button full success 
+        onPress={() => register(email, password)}
+        style={styles.button}>
+        <Text>Signup</Text>
+       </Button>
+{/* <FormButton
         title='back'
         style={styles.navButton}
         color='#6646ee'
         onPress={() => navigation.goBack()}
-      />
+      /> */}
+       <Button full info 
+        onPress={() => navigation.goBack()}
+        style={styles.button}>
+        <Text>back</Text>
+       </Button>
+      </Content>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#FFFFFF',
+    paddingTop:height / 5,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
@@ -66,5 +83,12 @@ const styles = StyleSheet.create({
   },
   navButton: {
     marginTop: 10
+  },
+  button: {
+    alignItems: 'center',
+    marginTop: 10,
+    width: width / 2,
+    height: height / 15
+
   }
 });
