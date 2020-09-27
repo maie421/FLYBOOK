@@ -18,7 +18,7 @@ export default ({ route }) => {
   async function handleSend(messages) {
     const text = messages[0].text;
 
-    dbService
+    await dbService
       .collection('THREADS')
       .doc(thread._id)
       .collection('MESSAGES')
@@ -54,7 +54,7 @@ export default ({ route }) => {
       .onSnapshot(querySnapshot => {
         const messages = querySnapshot.docs.map(doc => {
           const firebaseData = doc.data();
-
+          console.log(doc.data());
           const data = {
             _id: doc.id,
             text: '',
@@ -71,7 +71,7 @@ export default ({ route }) => {
 
           return data;
         });
-
+        console.log(messages);
         setMessages(messages);
       });
 
