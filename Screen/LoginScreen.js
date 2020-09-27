@@ -29,7 +29,7 @@ const login = async (email,password) => {
   return (
     <View style={styles.container}>
       
-      <Text style={styles.titleText}>Welcome to Chat app</Text>
+      <Text style={styles.titleText}>Welcome to FLYBOOK</Text>
       <FormInput
         labelName='Email'
         value={email}
