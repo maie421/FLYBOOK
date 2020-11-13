@@ -7,4 +7,4 @@
 </ul>
 <h3>화면</h3>
 <h3>결과 데이터</h3>
-<img src="https://user-images.githubusercontent.com/35258834/88254303-d326b200-ccef-11ea-891c-bf7c0850a2b7.png" width="100%">
+<img src="https://user-images.githubusercontent.com/35258834/99064535-69f1e400-25e9-11eb-927a-396a337f6274.jpg" width="100%">
