@@ -6,8 +6,7 @@
   <li>서버환경: Spring boot 2.x, java 8, Mysql 8 ,firebase </li>
   <li>라이브러리: ReactNative </li>
   <li>데이터통신: Rest api </li>
-  <h4>디자인 패턴</h4>
-  container + presenter</br>
+  container + presenter 디자인패턴</br>
   다음 Book API 사용</br>
   
 </ul>
