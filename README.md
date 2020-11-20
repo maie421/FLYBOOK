@@ -5,6 +5,10 @@
   <li>참여도: 개인프로젝트</li>
   <li>서버환경: Spring boot 2.x, java 8, Mysql 8 ,firebase </li>
   <li>라이브러리: ReactNative </li>
+  <li>데이터통신: Rest api </li>
+  <h4>container + presenter 디자인 패턴</h4>
+  <h4>다음 Book API 사용</h4>
+  
 </ul>
 <h3>화면</h3>
 <img src="https://user-images.githubusercontent.com/35258834/99064535-69f1e400-25e9-11eb-927a-396a337f6274.jpg" width="35%" align="left">
