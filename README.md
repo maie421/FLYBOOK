@@ -4,6 +4,7 @@
 <ul>
   <li>참여도: 개인프로젝트</li>
   <li>서버환경: Spring boot 2.x, java 8, Mysql 8 ,firebase </li>
+  <li>서버 github https://github.com/maie421/BookAPI_JPA/tree/master</li>
   <li>라이브러리: ReactNative </li>
   <li>데이터통신: Rest api </li>
   container + presenter 디자인패턴</br>
